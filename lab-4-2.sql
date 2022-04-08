@@ -24,4 +24,8 @@
 -- | Billy      | Hamilton  |
 -- | Ian        | Happ      |
 
+SELECT players.first_name, players.last_name
+FROM players
+INNER JOIN teams ON teams.id = players.id
+WHERE teams.year = 2020;
 
