@@ -25,7 +25,9 @@
 -- | Ian        | Happ      |
 
 SELECT players.first_name, players.last_name
-FROM players
-INNER JOIN teams ON teams.id = players.id
-WHERE teams.year = 2020;
+FROM stats
+INNER JOIN teams ON teams.id = stats.team_id
+INNER JOIN players ON players.id = stats.player_id
+WHERE teams.year = 2020
+AND teams.name = "Chicago Cubs";
 
